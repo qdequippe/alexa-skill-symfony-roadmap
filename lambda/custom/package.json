@@ -1,0 +1,32 @@
+{
+  "name": "alexa-skill-symfony-roadmap",
+  "version": "0.0.1",
+  "description": "Alexa Skill for Symfony roadmap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qdequippe/alexa-skill-symfony-roadmap.git"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "symfony",
+    "roadmap"
+  ],
+  "author": "Quentin Dequippe <quentin@dequippe.tech>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qdequippe/alexa-skill-symfony-roadmap/issues"
+  },
+  "homepage": "https://github.com/qdequippe/alexa-skill-symfony-roadmap#readme",
+  "dependencies": {
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-model": "^1.23.0",
+    "aws-sdk": "^2.562.0",
+    "i18next": "^19.0.0",
+    "i18next-sprintf-postprocessor": "^0.2.2"
+  }
+}

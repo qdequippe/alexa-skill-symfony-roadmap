@@ -1,0 +1,95 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "symfony roadmap",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "VersionIntent",
+          "slots": [
+            {
+              "name": "VersionAdjective",
+              "type": "VersionAdjective"
+            }
+          ],
+          "samples": [
+            "which version is {VersionAdjective}",
+            "which versions are {VersionAdjective}",
+            "what is the {VersionAdjective} version"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "VersionAdjective",
+          "values": [
+            {
+              "id": "latest",
+              "name": {
+                "value": "latest",
+                "synonyms": [
+                  "last"
+                ]
+              }
+            },
+            {
+              "id": "supported",
+              "name": {
+                "value": "supported"
+              }
+            },
+            {
+              "id": "latest_stable",
+              "name": {
+                "value": "latest stable",
+                "synonyms": [
+                  "last stable"
+                ]
+              }
+            },
+            {
+              "id": "next",
+              "name": {
+                "value": "next"
+              }
+            },
+            {
+              "id": "lts",
+              "name": {
+                "value": "lts",
+                "synonyms": [
+                  "long term",
+                  "long term support"
+                ]
+              }
+            },
+            {
+              "id": "stable",
+              "name": {
+                "value": "stable",
+                "synonyms": [
+                  "current"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
