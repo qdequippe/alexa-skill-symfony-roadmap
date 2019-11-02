@@ -36,7 +36,6 @@
       ],
       "types": [
         {
-          "name": "VersionAdjective",
           "values": [
             {
               "id": "latest",
@@ -87,9 +86,11 @@
                 ]
               }
             }
-          ]
+          ],
+          "name": "VersionAdjective"
         }
       ]
     }
-  }
+  },
+  "version": "7"
 }

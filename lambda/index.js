@@ -3,8 +3,8 @@
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
 const https = require('https');
-const i18n = require('i18next');
-const sprintf = require('i18next-sprintf-postprocessor');
+const i18n = require('i18next'); 
+const sprintf = require('i18next-sprintf-postprocessor'); 
 
 const languageStrings = {
     'en' : require('./i18n/en'),
@@ -142,10 +142,10 @@ const SymfonyVersionIntentHandler = {
     },
     async handle(handlerInput) {
         const response = await httpGet();
-
+        
         const versionAdjective = handlerInput.requestEnvelope.request.intent.slots.VersionAdjective;
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-
+        
         let speakOutput = '';
         switch (versionAdjective.value) {
             case 'next':
@@ -155,7 +155,7 @@ const SymfonyVersionIntentHandler = {
                 speakOutput = requestAttributes.t('LATEST_SYMFONY_VERSION', response.symfony_versions.next);
                 break;
             case 'lts':
-                speakOutput = requestAttributes.t('LONG_TERM_SUPPORT_SYMFONY_VERSION', response.symfony_versions.lts);
+                speakOutput = requestAttributes.t('LONG_TERM_SUPPORT_SYMFONY_VERSION', response.symfony_versions.lts); // 3.14 strange speak
                 break;
             case 'stable':
                 speakOutput = requestAttributes.t('STABLE_SYMFONY_VERSION', response.symfony_versions.stable);
@@ -170,12 +170,12 @@ const SymfonyVersionIntentHandler = {
                         versions += response.supported_versions[i];
                         continue;
                     }
-                    versions += response.supported_versions[i] + ', ';
+                   versions += response.supported_versions[i] + ', ';
                 }
                 requestAttributes.t('SUPPORTED_SYMFONY_VERSIONS', versions);
                 break;
         }
-
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .getResponse();
@@ -185,25 +185,25 @@ const SymfonyVersionIntentHandler = {
 function httpGet() {
     return new Promise(((resolve, reject) => {
         const options = {
-            hostname: 'symfony.com',
-            port: 443,
-            path: '/releases.json',
-            method: 'GET'
+          hostname: 'symfony.com',
+          port: 443,
+          path: '/releases.json',
+          method: 'GET'
         };
-
+        
         const request = https.request(options, (response) => {
             response.setEncoding('utf8');
-
+        
             let returnData = '';
 
             response.on('data', (chunk) => {
                 returnData += chunk;
             });
-
+    
             response.on('end', () => {
                 resolve(JSON.parse(returnData));
             });
-
+    
             response.on('error', (error) => {
                 reject(error);
             });

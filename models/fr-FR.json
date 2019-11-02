@@ -42,7 +42,6 @@
       ],
       "types": [
         {
-          "name": "VersionSlotType",
           "values": [
             {
               "id": "latest_stable",
@@ -84,9 +83,11 @@
                 "value": "stable"
               }
             }
-          ]
+          ],
+          "name": "VersionSlotType"
         }
       ]
     }
-  }
+  },
+  "version": "5"
 }
